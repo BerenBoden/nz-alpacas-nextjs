@@ -6,6 +6,7 @@ import {
   MagnifyingGlassIcon,
   ShoppingCartIcon,
   UserIcon,
+  ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import classNames from "@/lib/utils";
 import Link from "next/link";
@@ -87,13 +88,9 @@ export default function Navigation({
 }) {
   const cart = useContextSelector(CartContext, (state) => state.cart);
   const setCart = useContextSelector(CartContext, (state) => state.setCart);
-  console.log(cart);
   return (
     <header className="w-full z-10 fixed">
       <nav aria-label="Top">
-        {/* Top navigation */}
-
-        {/* Secondary navigation */}
         <div className="bg-white">
           <div className="border-b border-gray-200">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -119,12 +116,12 @@ export default function Navigation({
                         <Link
                           key={page.name}
                           href={page.href}
-                          className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                          className="flex items-center text-sm font-small text-gray-700 hover:text-gray-800"
                         >
                           {page.name}
                         </Link>
                       ))}
-                      {navigation.categories.map((category, categoryIdx) => (
+                      {navigation.categories.map((category) => (
                         <Popover key={category.name} className="flex">
                           {({ open }) => (
                             <>
@@ -134,10 +131,11 @@ export default function Navigation({
                                     open
                                       ? "border-indigo-600 text-indigo-600"
                                       : "border-transparent text-gray-700 hover:text-gray-800",
-                                    "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                                    "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-small transition-colors duration-200 ease-out"
                                   )}
                                 >
                                   {category.name}
+                                  <ChevronDownIcon className="ml-2 h-2 w-2" />
                                 </Popover.Button>
                               </div>
 
@@ -179,7 +177,7 @@ export default function Navigation({
                           <Link
                             key={page.name}
                             href={page.href}
-                            className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                            className="flex items-center text-sm font-small text-gray-700 hover:text-gray-800"
                           >
                             {page.name}
                           </Link>
@@ -196,7 +194,7 @@ export default function Navigation({
                     onClick={() => setMobileMenuOpen(true)}
                   >
                     <span className="sr-only">Open menu</span>
-                    <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+                    <Bars3Icon className="h-5 w-5" aria-hidden="true" />
                   </button>
 
                   {/* Search */}
@@ -206,15 +204,15 @@ export default function Navigation({
                   >
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
-                      className="h-6 w-6"
+                      className="h-5 w-5"
                       aria-hidden="true"
                     />
                   </a>
                 </div>
 
                 {/* Logo (lg-) */}
-                <a href="/" className="lg:hidden">
-                  <span className="sr-only">Your Company</span>
+                <Link href="/" className="lg:hidden">
+                  <span className="sr-only">New Zealand Alpacas LTD</span>
                   <Image
                     src="/images/logo.svg"
                     width={100}
@@ -222,7 +220,7 @@ export default function Navigation({
                     alt=""
                     className="h-8 w-auto"
                   />
-                </a>
+                </Link>
 
                 <div className="flex flex-1 items-center justify-end">
                   <div className="flex items-center lg:ml-8">
@@ -234,7 +232,7 @@ export default function Navigation({
                         >
                           <span className="sr-only">Search</span>
                           <MagnifyingGlassIcon
-                            className="h-6 w-6"
+                            className="h-5 w-5"
                             aria-hidden="true"
                           />
                         </a>
@@ -246,7 +244,7 @@ export default function Navigation({
                           className="-m-2 p-2 text-gray-400 hover:text-gray-500"
                         >
                           <span className="sr-only">Account</span>
-                          <UserIcon className="h-6 w-6" aria-hidden="true" />
+                          <UserIcon className="h-5 w-5" aria-hidden="true" />
                         </a>
                       </div>
                     </div>
@@ -258,16 +256,16 @@ export default function Navigation({
 
                     <div className="flow-root">
                       <div
-                        className="group -m-2 flex items-center p-2"
+                        className="group -m-2 flex items-center p-2 cursor-pointer"
                         onClick={() => {
                           setCart(!cart);
                         }}
                       >
                         <ShoppingCartIcon
-                          className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                          className="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                           aria-hidden="true"
                         />
-                        <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                        <span className="ml-2 text-xs text-gray-500 group-hover:text-gray-800">
                           0
                         </span>
                         <span className="sr-only">items in cart, view bag</span>
