@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/header/index";
 import CartSlideOver from "@/components/ui/cart-slide-over";
-
+import { createContext } from "use-context-selector";
+import CartProvider from "@/contexts/cart/cart-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,10 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {" "}
-        <Header />
-        <CartSlideOver />
-        {children}
+        <CartProvider>
+          {" "}
+          <Header />
+          <CartSlideOver />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

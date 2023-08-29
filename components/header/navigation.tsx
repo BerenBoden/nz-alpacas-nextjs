@@ -11,6 +11,8 @@ import classNames from "@/lib/utils";
 import Link from "next/link";
 import RenderCategories from "./render-categories";
 import Image from "next/image";
+import { useContextSelector } from "use-context-selector";
+import { CartContext } from "@/contexts/cart/cart-context";
 
 const navigation = {
   categories: [
@@ -83,6 +85,9 @@ export default function Navigation({
 }: {
   setMobileMenuOpen: any;
 }) {
+  const cart = useContextSelector(CartContext, (state) => state.cart);
+  const setCart = useContextSelector(CartContext, (state) => state.setCart);
+  console.log(cart);
   return (
     <header className="w-full z-10 fixed">
       <nav aria-label="Top">
@@ -95,15 +100,15 @@ export default function Navigation({
               <div className="flex h-16 items-center justify-between">
                 {/* Logo (lg+) */}
                 <div className="hidden lg:flex lg:items-center">
-                  <a href="#">
+                  <Link href="/">
                     <span className="sr-only">New Zealand Alpacas LTD</span>
                     <Image
-                      src="/images/logo.jpg"
+                      src="/images/logo.svg"
                       alt="logo"
                       width={100}
                       height={100}
                     />
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="hidden h-full lg:flex">
@@ -208,10 +213,12 @@ export default function Navigation({
                 </div>
 
                 {/* Logo (lg-) */}
-                <a href="#" className="lg:hidden">
+                <a href="/" className="lg:hidden">
                   <span className="sr-only">Your Company</span>
-                  <img
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  <Image
+                    src="/images/logo.svg"
+                    width={100}
+                    height={100}
                     alt=""
                     className="h-8 w-auto"
                   />
@@ -250,7 +257,12 @@ export default function Navigation({
                     />
 
                     <div className="flow-root">
-                      <a href="#" className="group -m-2 flex items-center p-2">
+                      <div
+                        className="group -m-2 flex items-center p-2"
+                        onClick={() => {
+                          setCart(!cart);
+                        }}
+                      >
                         <ShoppingCartIcon
                           className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                           aria-hidden="true"
@@ -259,7 +271,7 @@ export default function Navigation({
                           0
                         </span>
                         <span className="sr-only">items in cart, view bag</span>
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </div>
