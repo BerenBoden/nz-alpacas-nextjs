@@ -10,11 +10,12 @@ import {
 import classNames from "@/lib/utils";
 import Link from "next/link";
 import RenderCategories from "./render-categories";
+import Image from "next/image";
 
 const navigation = {
   categories: [
     {
-      name: "Women",
+      name: "Shop",
       featured: [
         { name: "Sleep", href: "#" },
         { name: "Swimwear", href: "#" },
@@ -42,7 +43,7 @@ const navigation = {
       ],
     },
     {
-      name: "Men",
+      name: "Blog",
       featured: [
         { name: "Casual", href: "#" },
         { name: "Boxers", href: "#" },
@@ -95,11 +96,12 @@ export default function Navigation({
                 {/* Logo (lg+) */}
                 <div className="hidden lg:flex lg:items-center">
                   <a href="#">
-                    <span className="sr-only">Your Company</span>
-                    <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                      alt=""
+                    <span className="sr-only">New Zealand Alpacas LTD</span>
+                    <Image
+                      src="/images/logo.jpg"
+                      alt="logo"
+                      width={100}
+                      height={100}
                     />
                   </a>
                 </div>
