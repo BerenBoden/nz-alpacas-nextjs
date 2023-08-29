@@ -9,6 +9,8 @@ import {
 } from "@heroicons/react/24/outline";
 import classNames from "@/lib/utils";
 import Link from "next/link";
+import RenderCategories from "./render-categories";
+
 const navigation = {
   categories: [
     {
@@ -151,44 +153,9 @@ export default function Navigation({
                                   <div className="relative bg-white">
                                     <div className="mx-auto max-w-7xl px-8">
                                       <div className="grid grid-cols-4 items-start gap-x-8 gap-y-10 pb-12 pt-10">
-                                        {Object.keys(
-                                          navigation.categories[0]
-                                        ).map((key) => {
-                                          if (key !== "name") {
-                                            return (
-                                              <div key={key}>
-                                                <p
-                                                  id={`desktop-${key}-heading`}
-                                                  className="capitalize font-medium text-gray-900"
-                                                >
-                                                  {key}
-                                                </p>
-                                                <ul
-                                                  role="list"
-                                                  aria-labelledby={`desktop-${key}-heading`}
-                                                  className="mt-6 space-y-6 sm:mt-4 sm:space-y-4"
-                                                >
-                                                  {/* {navigation.categories[0][
-                                                    key
-                                                  ].map((item) => (
-                                                    <li
-                                                      key={item.name}
-                                                      className="flex"
-                                                    >
-                                                      <a
-                                                        href={item.href}
-                                                        className="hover:text-gray-800"
-                                                      >
-                                                        {item.name}
-                                                      </a>
-                                                    </li>
-                                                  ))} */}
-                                                </ul>
-                                              </div>
-                                            );
-                                          }
-                                          return null;
-                                        })}
+                                        <RenderCategories
+                                          categories={category}
+                                        />
                                       </div>
                                     </div>
                                   </div>
