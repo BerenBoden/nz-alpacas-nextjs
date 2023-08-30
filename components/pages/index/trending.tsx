@@ -20,10 +20,10 @@ const products: Product[] = [
     description: "The Pen is machined from solid steel and painted black.",
   },
   {
-    id: 1,
-    title: "Machined Pen",
+    id: 2,
+    title: "Machined Pen2",
     price: 35,
-    slug: "machined-pen",
+    slug: "machined-pen2",
     image: {
       id: 1,
       imageSrc:
@@ -36,10 +36,10 @@ const products: Product[] = [
     description: "The Pen is machined from solid steel and painted black.",
   },
   {
-    id: 1,
-    title: "Machined Pen",
+    id: 3,
+    title: "Machined Pen3",
     price: 35,
-    slug: "machined-pen",
+    slug: "machined-pen3",
     image: {
       id: 1,
       imageSrc:
@@ -52,10 +52,10 @@ const products: Product[] = [
     description: "The Pen is machined from solid steel and painted black.",
   },
   {
-    id: 1,
-    title: "Machined Pen",
+    id: 4,
+    title: "Machined Pen4",
     price: 35,
-    slug: "machined-pen",
+    slug: "machined-pen4",
     image: {
       id: 1,
       imageSrc:

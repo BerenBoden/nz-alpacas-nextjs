@@ -13,7 +13,10 @@ const Button: React.FC<ButtonProps> = ({
   const baseStyle = "transition-colors duration-200";
 
   return (
-    <button {...props} className={`${baseStyle} ${className} h-8 rounded`}>
+    <button
+      {...props}
+      className={`${baseStyle} ${className} h-8 rounded cursor-pointer`}
+    >
       {children}
     </button>
   );

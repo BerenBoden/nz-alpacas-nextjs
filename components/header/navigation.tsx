@@ -14,6 +14,7 @@ import RenderCategories from "./render-categories";
 import Image from "next/image";
 import { useContextSelector } from "use-context-selector";
 import { CartContext } from "@/contexts/cart/cart-context";
+import Button from "../ui/button";
 
 const navigation = {
   categories: [
@@ -188,14 +189,14 @@ export default function Navigation({
 
                 {/* Mobile menu and search (lg-) */}
                 <div className="flex flex-1 items-center lg:hidden">
-                  <button
+                  <Button
                     type="button"
                     className="-ml-2 rounded-md bg-white p-2 text-gray-400"
                     onClick={() => setMobileMenuOpen(true)}
                   >
                     <span className="sr-only">Open menu</span>
                     <Bars3Icon className="h-5 w-5" aria-hidden="true" />
-                  </button>
+                  </Button>
 
                   {/* Search */}
                   <a
@@ -255,20 +256,20 @@ export default function Navigation({
                     />
 
                     <div className="flow-root">
-                      <div
-                        className="group -m-2 flex items-center p-2 cursor-pointer"
-                        onClick={() => {
-                          setCart(!cart);
-                        }}
-                      >
+                      <div className="group -m-2 flex items-center p-2 cursor-pointer">
                         <ShoppingCartIcon
                           className="h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                           aria-hidden="true"
+                          onClick={() => {
+                            setCart(!cart);
+                          }}
                         />
                         <span className="ml-2 text-xs text-gray-500 group-hover:text-gray-800">
                           0
                         </span>
-                        <span className="sr-only">items in cart, view bag</span>
+                        <span className="sr-only">
+                          click to view items in cart
+                        </span>
                       </div>
                     </div>
                   </div>

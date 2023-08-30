@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/header/index";
 import CartSlideOver from "@/components/ui/cart-slide-over";
-import { createContext } from "use-context-selector";
 import CartProvider from "@/contexts/cart/cart-provider";
 const inter = Inter({ subsets: ["latin"] });
 
