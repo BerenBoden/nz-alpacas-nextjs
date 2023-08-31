@@ -1,5 +1,6 @@
 import CategoryCard from "@/components/cards/category-card";
 import { Category } from "@/types/types";
+import Link from "next/link";
 
 const categories: Category[] = [
   {
@@ -48,10 +49,21 @@ export default function CategoryList() {
     <section aria-labelledby="category-list" className="bg-gray-100">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-          <h2 className="text-2xl font-bold text-gray-900">
-            Popular Categories
-          </h2>
-
+          <div className="sm:flex sm:items-baseline sm:justify-between">
+            <h2
+              id="category-heading"
+              className="text-2xl font-bold tracking-tight text-gray-900"
+            >
+              Popular categories
+            </h2>
+            <Link
+              href="/"
+              className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
+            >
+              See more
+              <span aria-hidden="true"> →</span>
+            </Link>
+          </div>
           <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
             {categories.map((collection) => (
               <CategoryCard category={collection} />

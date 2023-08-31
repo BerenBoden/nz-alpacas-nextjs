@@ -20,58 +20,58 @@ const navigation = {
   categories: [
     {
       name: "Shop",
-      featured: [
-        { name: "Sleep", href: "#" },
-        { name: "Swimwear", href: "#" },
-        { name: "Underwear", href: "#" },
+      category: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Taf", href: "#" },
       ],
-      collection: [
-        { name: "Everything", href: "#" },
-        { name: "Core", href: "#" },
-        { name: "New Arrivals", href: "#" },
-        { name: "Sale", href: "#" },
+      category2: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
       ],
-      categories: [
-        { name: "Basic Tees", href: "#" },
-        { name: "Artwork Tees", href: "#" },
-        { name: "Bottoms", href: "#" },
-        { name: "Underwear", href: "#" },
-        { name: "Accessories", href: "#" },
+      category3: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
       ],
-      brands: [
-        { name: "Full Nelson", href: "#" },
-        { name: "My Way", href: "#" },
-        { name: "Re-Arranged", href: "#" },
-        { name: "Counterfeit", href: "#" },
-        { name: "Significant Other", href: "#" },
+      category4: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
       ],
     },
     {
       name: "Blog",
-      featured: [
-        { name: "Casual", href: "#" },
-        { name: "Boxers", href: "#" },
-        { name: "Outdoor", href: "#" },
+      category: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Taf", href: "#" },
       ],
-      collection: [
-        { name: "Everything", href: "#" },
-        { name: "Core", href: "#" },
-        { name: "New Arrivals", href: "#" },
-        { name: "Sale", href: "#" },
+      category2: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
       ],
-      categories: [
-        { name: "Artwork Tees", href: "#" },
-        { name: "Pants", href: "#" },
-        { name: "Accessories", href: "#" },
-        { name: "Boxers", href: "#" },
-        { name: "Basic Tees", href: "#" },
+      category3: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
       ],
-      brands: [
-        { name: "Significant Other", href: "#" },
-        { name: "My Way", href: "#" },
-        { name: "Counterfeit", href: "#" },
-        { name: "Re-Arranged", href: "#" },
-        { name: "Full Nelson", href: "#" },
+      category4: [
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
+        { name: "Tag", href: "#" },
       ],
     },
   ],

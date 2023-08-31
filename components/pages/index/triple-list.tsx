@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function TripleList() {
   return (
@@ -9,15 +10,15 @@ export default function TripleList() {
             id="category-heading"
             className="text-2xl font-bold tracking-tight text-gray-900"
           >
-            Shop by Category
+            Featured tags
           </h2>
-          <a
-            href="#"
+          <Link
+            href="/"
             className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
           >
-            Browse all categories
+            See more
             <span aria-hidden="true"> →</span>
-          </a>
+          </Link>
         </div>
         <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:grid-rows-2 sm:gap-x-6 lg:gap-8">
           <div className="group aspect-h-1 aspect-w-2 overflow-hidden rounded shadow-sm border sm:relative sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2 sm:h-full">
