@@ -8,15 +8,20 @@ export default function CartProvider({
   children: React.ReactNode;
 }) {
   const [products, setProducts] = React.useState<any[]>(() => {
-    // Retrieve products from local storage when initializing
-    const savedProducts = localStorage.getItem("products");
-    return savedProducts ? JSON.parse(savedProducts) : [];
+    // Check if localStorage is defined
+    if (typeof window !== "undefined" && window.localStorage) {
+      const savedProducts = localStorage.getItem("products");
+      return savedProducts ? JSON.parse(savedProducts) : [];
+    }
+    return [];
   });
   const [cart, setCart] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    // Update local storage whenever products change
-    localStorage.setItem("products", JSON.stringify(products));
+    // Check if localStorage is defined before setting item
+    if (typeof window !== "undefined" && window.localStorage) {
+      localStorage.setItem("products", JSON.stringify(products));
+    }
   }, [products]);
 
   return (
