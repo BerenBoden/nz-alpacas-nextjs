@@ -1,40 +1,111 @@
+"use client";
+import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
+
 export default function Hero() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 4000 }),
+  ]);
   return (
-    <div className="flex flex-col border-b border-gray-200 lg:border-0">
-      <div className="relative">
-        <div
-          aria-hidden="true"
-          className="absolute hidden h-full w-1/2 bg-gray-100 lg:block"
-        />
-        <div className="relative bg-gray-100 lg:bg-transparent">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
-            <div className="mx-auto max-w-2xl py-24 lg:max-w-none lg:py-64">
-              <div className="lg:pr-16">
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">
-                  Focus on what matters
-                </h1>
-                <p className="mt-4 text-xl text-gray-600">
-                  All the charts, datepickers, and notifications in the world
-                  can't beat checking off some items on a paper card.
-                </p>
-                <div className="mt-6">
-                  <a
-                    href="#"
-                    className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 font-medium text-white hover:bg-indigo-700"
-                  >
-                    Shop Productivity
-                  </a>
+    <div ref={emblaRef} className="embla">
+      <div className="embla__container">
+        <div className="flex flex-col border-b border-gray-200 lg:border-0 embla__slide">
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute z-10 hidden h-full w-1/2 bg-gray-100 lg:block opacity-90"
+            />
+            <div className="lg:relative absolute lg:bg-transparent z-20 py-32 lg:py-60">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:max-w-none">
+                  <div className="lg:pr-16">
+                    <h1 className="text-xl font-bold tracking-tight text-white lg:text-gray-900 sm:text-2xl xl:text-4xl">
+                      Heading one
+                    </h1>
+                    <p className="mt-4 text-sm text-white lg:text-gray-600">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Velit, blanditiis beatae! Assumenda, corrupti.
+                    </p>
+                    <div className="mt-6">
+                      <Link
+                        href="/"
+                        className="inline-block rounded-md border border-transparent bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-black-600"
+                      >
+                        Shop now
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="z-10 w-full h-80 relative lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
+            <div className="relative w-full h-full bg-gradient-to-t from-black via-black opacity-5 to-transparent z-10"></div>
+              <Image
+                src="/images/bg-image-5.jpg"
+                layout="fill"
+                objectFit="cover"
+                alt=""
+                className=""
+              />
+            </div>
+            <Image
+              className="absolute z-0 bg-transparent"
+              src="/images/topography.svg"
+              layout="fill"
+              objectFit="cover"
+              alt="hero"
+            />
           </div>
         </div>
-        <div className="h-48 w-full sm:h-64 lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
-          <img
-            src="https://tailwindui.com/img/ecommerce-images/home-page-02-hero-half-width.jpg"
-            alt=""
-            className="h-full w-full object-cover object-center"
-          />
+        <div className="flex flex-col border-b border-gray-200 lg:border-0 embla__slide">
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute z-10 hidden h-full w-1/2 bg-gray-100 lg:block opacity-90"
+            />
+            <div className="lg:relative absolute lg:bg-transparent z-20 py-24 lg:py-60">
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:grid lg:grid-cols-2 lg:px-8">
+                <div className="mx-auto max-w-2xl lg:max-w-none">
+                  <div className="lg:pr-16">
+                    <h1 className="text-xl font-bold tracking-tight text-white lg:text-gray-900 sm:text-2xl xl:text-4xl">
+                      Heading two
+                    </h1>
+                    <p className="mt-4 text-sm text-white lg:text-gray-600">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                      Eos praesentium fugiat non ratione quia.
+                    </p>
+                    <div className="mt-6">
+                      <Link
+                        href="#"
+                        className="inline-block rounded-md border border-transparent bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-black-600"
+                      >
+                        Shop now
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="z-10 w-full h-80 relative lg:absolute lg:right-0 lg:top-0 lg:h-full lg:w-1/2">
+              <div className="relative w-full h-full bg-gradient-to-t from-black via-black opacity-10 to-transparent z-10"></div>
+              <Image
+                src="/images/bg-image-7.jpg"
+                layout="fill"
+                objectFit="cover"
+                alt=""
+                className=""
+              />
+            </div>
+            <Image
+              className="absolute z-0 bg-transparent"
+              src="/images/leaf.svg"
+              layout="fill"
+              objectFit="cover"
+              alt="df"
+            />
+          </div>
         </div>
       </div>
     </div>

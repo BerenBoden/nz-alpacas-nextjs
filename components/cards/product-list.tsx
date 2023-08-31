@@ -10,8 +10,7 @@ const products: Product[] = [
     slug: "machined-pen",
     image: {
       id: 1,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageSrc: "/images/blank-image.svg",
       imageAlt:
         "Black machined steel pen with hexagonal grip and small white logo at top.",
     },
@@ -26,8 +25,7 @@ const products: Product[] = [
     slug: "machined-pen2",
     image: {
       id: 1,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageSrc: "/images/blank-image.svg",
       imageAlt:
         "Black machined steel pen with hexagonal grip and small white logo at top.",
     },
@@ -42,8 +40,7 @@ const products: Product[] = [
     slug: "machined-pen3",
     image: {
       id: 1,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageSrc: "/images/blank-image.svg",
       imageAlt:
         "Black machined steel pen with hexagonal grip and small white logo at top.",
     },
@@ -58,8 +55,7 @@ const products: Product[] = [
     slug: "machined-pen4",
     image: {
       id: 1,
-      imageSrc:
-        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageSrc: "/images/blank-image.svg",
       imageAlt:
         "Black machined steel pen with hexagonal grip and small white logo at top.",
     },
@@ -69,7 +65,7 @@ const products: Product[] = [
   },
 ];
 
-export default function Trending() {
+export default function ProductList() {
   return (
     <section aria-labelledby="trending-heading" className="bg-white">
       <div className="py-16 sm:py-24 mx-auto max-w-7xl px-8 lg:py-32">
@@ -93,7 +89,7 @@ export default function Trending() {
           <div className="relative">
             <div
               role="list"
-              className="grid grid-cols-2 gap-y-4 gap-x-4 sm:grid-cols-3 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-4"
+              className="grid grid-cols-2 gap-y-4 gap-x-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 lg:grid-cols-4 xl:grid-cols-4"
             >
               {products.map((product) => (
                 <ProductCard product={product} />

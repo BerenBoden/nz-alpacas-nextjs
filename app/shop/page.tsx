@@ -4,6 +4,8 @@ import { Dialog, Disclosure, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon, PlusIcon } from "@heroicons/react/20/solid";
 import classNames from "@/lib/utils";
+import ProductCard from "@/components/cards/product-card";
+import { Product } from "@/types/types";
 
 const breadcrumbs = [{ id: 1, name: "Men", href: "#" }];
 const filters = [
@@ -43,34 +45,73 @@ const filters = [
     ],
   },
 ];
-const products = [
+const products: Product[] = [
   {
     id: 1,
-    name: "Basic Tee 8-Pack",
-    href: "#",
-    price: "$256",
-    description:
-      "Get the full lineup of our Basic Tees. Have a fresh shirt all week, and an extra for laundry day.",
-    options: "8 colors",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-01.jpg",
-    imageAlt:
-      "Eight shirts arranged on table in black, olive, grey, blue, white, red, mustard, and green.",
+    title: "Machined Pen",
+    price: 35,
+    slug: "machined-pen",
+    image: {
+      id: 1,
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageAlt:
+        "Black machined steel pen with hexagonal grip and small white logo at top.",
+    },
+    stock: 3,
+    category: "Accessories",
+    description: "The Pen is machined from solid steel and painted black.",
   },
   {
     id: 2,
-    name: "Basic Tee",
-    href: "#",
-    price: "$32",
-    description:
-      "Look like a visionary CEO and wear the same black t-shirt every day.",
-    options: "Black",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-02.jpg",
-    imageAlt: "Front of plain black t-shirt.",
+    title: "Machined Pen2",
+    price: 35,
+    slug: "machined-pen2",
+    image: {
+      id: 1,
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageAlt:
+        "Black machined steel pen with hexagonal grip and small white logo at top.",
+    },
+    stock: 3,
+    category: "Accessories",
+    description: "The Pen is machined from solid steel and painted black.",
   },
-  // More products...
+  {
+    id: 3,
+    title: "Machined Pen3",
+    price: 35,
+    slug: "machined-pen3",
+    image: {
+      id: 1,
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageAlt:
+        "Black machined steel pen with hexagonal grip and small white logo at top.",
+    },
+    stock: 3,
+    category: "Accessories",
+    description: "The Pen is machined from solid steel and painted black.",
+  },
+  {
+    id: 4,
+    title: "Machined Pen4",
+    price: 35,
+    slug: "machined-pen4",
+    image: {
+      id: 1,
+      imageSrc:
+        "https://tailwindui.com/img/ecommerce-images/home-page-02-product-01.jpg",
+      imageAlt:
+        "Black machined steel pen with hexagonal grip and small white logo at top.",
+    },
+    stock: 3,
+    category: "Accessories",
+    description: "The Pen is machined from solid steel and painted black.",
+  },
 ];
+
 const footerNavigation = {
   products: [
     { name: "Bags", href: "#" },
@@ -330,161 +371,12 @@ export default function Example() {
 
               <div className="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-3">
                 {products.map((product) => (
-                  <div
-                    key={product.id}
-                    className="group relative flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white"
-                  >
-                    <div className="aspect-h-4 aspect-w-3 bg-gray-200 sm:aspect-none group-hover:opacity-75 sm:h-96">
-                      <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
-                        className="h-full w-full object-cover object-center sm:h-full sm:w-full"
-                      />
-                    </div>
-                    <div className="flex flex-1 flex-col space-y-2 p-4">
-                      <h3 className="text-sm font-medium text-gray-900">
-                        <a href={product.href}>
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-0"
-                          />
-                          {product.name}
-                        </a>
-                      </h3>
-                      <p className="text-sm text-gray-500">
-                        {product.description}
-                      </p>
-                      <div className="flex flex-1 flex-col justify-end">
-                        <p className="text-sm italic text-gray-500">
-                          {product.options}
-                        </p>
-                        <p className="text-base font-medium text-gray-900">
-                          {product.price}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <ProductCard product={product} />
                 ))}
               </div>
             </section>
           </div>
         </main>
-
-        <footer
-          aria-labelledby="footer-heading"
-          className="border-t border-gray-200 bg-white"
-        >
-          <h2 id="footer-heading" className="sr-only">
-            Footer
-          </h2>
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="py-20">
-              <div className="grid grid-cols-1 md:grid-flow-col md:auto-rows-min md:grid-cols-12 md:gap-x-8 md:gap-y-16">
-                {/* Image section */}
-                <div className="col-span-1 md:col-span-2 lg:col-start-1 lg:row-start-1">
-                  <img
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                    alt=""
-                    className="h-8 w-auto"
-                  />
-                </div>
-
-                {/* Sitemap sections */}
-                <div className="col-span-6 mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-8 md:col-start-3 md:row-start-1 md:mt-0 lg:col-span-6 lg:col-start-2">
-                  <div className="grid grid-cols-1 gap-y-12 sm:col-span-2 sm:grid-cols-2 sm:gap-x-8">
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-900">
-                        Products
-                      </h3>
-                      <ul role="list" className="mt-6 space-y-6">
-                        {footerNavigation.products.map((item) => (
-                          <li key={item.name} className="text-sm">
-                            <a
-                              href={item.href}
-                              className="text-gray-500 hover:text-gray-600"
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-medium text-gray-900">
-                        Company
-                      </h3>
-                      <ul role="list" className="mt-6 space-y-6">
-                        {footerNavigation.company.map((item) => (
-                          <li key={item.name} className="text-sm">
-                            <a
-                              href={item.href}
-                              className="text-gray-500 hover:text-gray-600"
-                            >
-                              {item.name}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-medium text-gray-900">
-                      Customer Service
-                    </h3>
-                    <ul role="list" className="mt-6 space-y-6">
-                      {footerNavigation.customerService.map((item) => (
-                        <li key={item.name} className="text-sm">
-                          <a
-                            href={item.href}
-                            className="text-gray-500 hover:text-gray-600"
-                          >
-                            {item.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Newsletter section */}
-                <div className="mt-12 md:col-span-8 md:col-start-3 md:row-start-2 md:mt-0 lg:col-span-4 lg:col-start-9 lg:row-start-1">
-                  <h3 className="text-sm font-medium text-gray-900">
-                    Sign up for our newsletter
-                  </h3>
-                  <p className="mt-6 text-sm text-gray-500">
-                    The latest deals and savings, sent to your inbox weekly.
-                  </p>
-                  <form className="mt-2 flex sm:max-w-md">
-                    <label htmlFor="email-address" className="sr-only">
-                      Email address
-                    </label>
-                    <input
-                      id="email-address"
-                      type="text"
-                      autoComplete="email"
-                      required
-                      className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white px-4 py-2 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                    />
-                    <div className="ml-4 flex-shrink-0">
-                      <button
-                        type="submit"
-                        className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                      >
-                        Sign up
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-100 py-10 text-center">
-              <p className="text-sm text-gray-500">
-                &copy; 2021 Your Company, Inc. All rights reserved.
-              </p>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
   );

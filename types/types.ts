@@ -14,3 +14,11 @@ export type Image = {
   imageSrc: string;
   imageAlt: string;
 };
+
+export type Category = {
+  id: number;
+  title: string;
+  description: string;
+  slug: string;
+  image: Image;
+};

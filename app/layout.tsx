@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/header/index";
 import CartSlideOver from "@/components/ui/cart-slide-over";
 import CartProvider from "@/contexts/cart/cart-provider";
+import Footer from "@/components/ui/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
           <CartSlideOver />
           {children}
         </CartProvider>
+        <Footer />
       </body>
     </html>
   );

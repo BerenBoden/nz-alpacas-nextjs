@@ -12,18 +12,17 @@ export default function ProductCard({ product }: { product: Product }) {
     CartContext,
     (state) => state.setProducts
   );
-  console.log(products);
   return (
     <div key={product.id} className="inline-flex flex-col border shadow-sm">
       <div className="group relative">
         <Link href={product.slug} className="aspect-h-1 aspect-w-1">
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200">
+          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden bg-gray-200 h-64 flex items-center justify-center">
             <Image
               src={product.image.imageSrc}
               alt={product.image.imageAlt}
-              width={1000}
-              height={1000}
-              className="h-full w-full object-cover object-center group-hover:opacity-75"
+              height={24}
+              width={24}
+              className="object-cover object-center group-hover:opacity-75"
             />
           </div>
         </Link>

@@ -1,20 +1,21 @@
-import Footer from "@/components/pages/index/footer";
 import Hero from "@/components/pages/index/hero";
-import Collections from "@/components/pages/index/collections";
-import Trending from "@/components/pages/index/trending";
-import Testimonials from "@/components/pages/index/testimonials";
+import CategoryList from "@/components/cards/category-list";
+import ProductList from "@/components/cards/product-list";
+import Incentives from "@/components/pages/index/incentives";
+import CallToAction from "@/components/pages/index/call-to-action";
+import TripleList from "@/components/pages/index/triple-list";
 
 export default function Home() {
-
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
       <main>
         <Hero />
-        <Trending />
-        <Collections />
-        <Testimonials />
+        <ProductList />
+        <CategoryList />
+        <TripleList />
+        <Incentives />
+        <CallToAction />
       </main>
-      <Footer />
     </div>
   );
 }
